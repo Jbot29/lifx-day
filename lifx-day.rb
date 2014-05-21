@@ -34,7 +34,14 @@ def match_sun(light)
 	    if last_altitude == -1
 	    light.set_power!(:on)
 	    end
-		  color = LIFX::Color.orange(saturation: 1.0, brightness: normalized)
+		  time = Time.new
+		  puts time.hour
+		  puts normalized
+		  if time.hour > 11 and time.hour < 13
+		     color = LIFX::Color.white(brightness: 1.0)
+		  else
+		     color = LIFX::Color.orange(saturation: 1.0 - normalized, brightness: normalized)
+		  end
       		  light.set_color(color, duration: 1)	    
 	  end
 
