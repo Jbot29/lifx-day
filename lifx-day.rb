@@ -1,7 +1,7 @@
 require 'lifx'
 require_relative 'sun-altitude'
 
-$light_name = 'Bedroom'
+$light_name = 'Living Room'
 $latitude = 30.2500
 $longitude = -97.7500
 $gmtoffset = -6
@@ -34,8 +34,8 @@ def match_sun(light)
 	    if last_altitude == -1
 	    light.set_power!(:on)
 	    end
-	          white = LIFX::Color.white(brightness: normalized)
-      		  light.set_color(white, duration: 1)	    
+		  color = LIFX::Color.orange(saturation: 1.0, brightness: normalized)
+      		  light.set_color(color, duration: 1)	    
 	  end
 
 	  if altitude < 0
