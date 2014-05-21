@@ -1,7 +1,7 @@
 require 'lifx'
 require_relative 'sun-altitude'
 
-$light_name = 'Living Room'
+$light_name = 'Bedroom'
 $latitude = 30.2500
 $longitude = -97.7500
 $gmtoffset = -6
